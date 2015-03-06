@@ -59,7 +59,6 @@ class UserTest < ActiveSupport::TestCase
   test "email should be saved lower case" do
     @user.email = @user.email.upcase
     @user.save
-    @user.reload
     assert @user.email == @user.email.downcase, "email should be saved lowercase in db"
   end
   
