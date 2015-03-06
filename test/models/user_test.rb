@@ -63,5 +63,8 @@ class UserTest < ActiveSupport::TestCase
     assert @user.email == @user.email.downcase, "email should be saved lowercase in db"
   end
   
-  
+  test "password should have a minimum length" do
+    @user.password = @user.password_confirmation = 'a' * 5
+    assert_not @user.valid?, "password should be at least 6 characters"
+  end
 end
