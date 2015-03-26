@@ -20,6 +20,7 @@ class UsersSignupTest < ActionDispatch::IntegrationTest
     assert_template 'users/show'
     assert_not flash.empty?
     assert_select 'div.alert-success'
+    assert is_logged_in?, "user should be automatically logged in upon registration"
   end
   
 end
