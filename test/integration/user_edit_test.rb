@@ -4,6 +4,7 @@ class UserEditTest < ActionDispatch::IntegrationTest
   
   def setup
     @user = users(:marc)
+    log_in_as @user
   end
   
   test "unsuccessfull edit" do
