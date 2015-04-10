@@ -47,7 +47,7 @@ class UsersController < ApplicationController
   private
     
     def user_params
-      params[:user][:name].split.collect { |w| w.capitalize }.join(" ")
+      params[:user][:name].split.collect { |w| w.capitalize }.join(" ") unless params[:user][:name].nil?
       params.require(:user).permit(:name, :email, :password, :password_confirmation)
     end
     
